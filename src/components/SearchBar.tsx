@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 const formSchema = z.object({
   searchQuery: z.string({
     required_error: "Restaurant name is Required",
-  }),
+  }).min(1, "Restaurant name is Required"),
 });
 
 export type SearchForm = z.infer<typeof formSchema>;
