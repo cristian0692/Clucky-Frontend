@@ -13,7 +13,7 @@ const HomePage = () => {
   };
   return (
     <div className="flex flex-col gap-12">
-      <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16">
+      <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16 px-5">
         <h1 className="text-4xl font-bold tracking-tight text-green-600">
           Make your diet healthier today
         </h1>
