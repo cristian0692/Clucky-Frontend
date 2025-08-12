@@ -16,7 +16,7 @@ const ManageRestaurantPage = () => {
   const { updateRestaurant, isLoading: isUpdateLoading } =
     useUpdateMyRestaurant();
 
-  const { orders } = useGetMyRestaurantOrders();
+  const { orders, isLoading: isOrderLoading } = useGetMyRestaurantOrders();
 
   const isEditing = !!restaurant;
   return (
@@ -30,9 +30,10 @@ const ManageRestaurantPage = () => {
         className="space-y-5 bg-gray-50 p-10 rounded-lg"
       >
         <h2 className="text-2xl font-bold"> {orders?.length} active orders</h2>
-        {orders?.map((order) => (
-          <OrderItemCart order={order} />
-        ))}
+
+        {isOrderLoading
+          ? <div>Gettings the orders...</div>
+          : orders?.map((order) => <OrderItemCart order={order} />)}
       </TabsContent>
       <TabsContent value="manage-restaurant">
         <ManageRestaurantForm
